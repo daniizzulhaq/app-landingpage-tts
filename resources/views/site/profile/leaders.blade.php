@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title', 'Profil Pimpinan')
 @section('description', 'Profil Kapolres, Wakapolres, dan pejabat utama '.setting('site_tagline', 'Kepolisian Resor Timor Tengah Selatan').'.')
-@section('og_image', $kapolres?->foto ? media_url($kapolres->foto) : '')
+@section('og_image', $kapolres->fotoUrl())
 
 @section('content')
     <x-site.page-hero title="Profil Pimpinan" :crumbs="['Profil' => null, 'Profil Pimpinan' => null]" />
@@ -12,7 +12,7 @@
             <div class="row g-5 align-items-start">
                 <div class="col-md-5 col-lg-4">
                     <div class="leader-card">
-                        <img src="{{ media_url($kapolres?->foto, 'img/avatar.svg') }}" alt="Foto Kapolres" loading="lazy">
+                        <div class="leader-photo"><img src="{{ $kapolres->fotoUrl() }}" @class(['kapolres-photo-original' => $kapolres->fotoUrl() === asset(config('kapolres.foto'))]) alt="{{ $kapolres->namaLengkap() }}" width="1280" height="1280" loading="lazy"></div>
                         <div class="info">
                             <div class="jabatan">{{ $kapolres?->jabatan ?? 'Kapolres' }}</div>
                             <div class="nama">{{ $kapolres?->nama ?? '(diisi admin)' }}</div>

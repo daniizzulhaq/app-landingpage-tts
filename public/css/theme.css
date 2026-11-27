@@ -73,9 +73,9 @@
 .home-section-head p { color: var(--muted); margin: 12px 0 0; font-size: 12px; }
 .heading-dot { color: var(--brass); }
 
-/* The hero is an institutional identity, rather than an unrelated stock photo. */
-.home-hero { position: relative; overflow: hidden; color: #fff; background: #101e31; padding: 70px 0 80px; }
-.home-hero::before { position: absolute; content: ''; inset: 0; background: radial-gradient(ellipse at 77% 40%, #2c466345 0, transparent 52%); pointer-events: none; }
+/* The headquarters photo sits behind the homepage identity. */
+.home-hero { position: relative; overflow: hidden; color: #fff; background: #101e31 url('../img/polres-tts-background.jpg') center 65% / cover no-repeat; padding: 70px 0 80px; }
+.home-hero::before { position: absolute; content: ''; inset: 0; background: linear-gradient(90deg, #101e31eb 0%, #101e31c7 46%, #101e3180 100%), linear-gradient(0deg, #101e31a6, transparent 60%); pointer-events: none; }
 .hero-grid-lines { position: absolute; inset: 0; background-image: linear-gradient(#ffffff03 1px, transparent 1px), linear-gradient(90deg, #ffffff03 1px, transparent 1px); background-size: 76px 76px; mask-image: linear-gradient(90deg, transparent, #000); pointer-events: none; }
 .home-hero .container { position: relative; }
 .home-hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 50px; }
@@ -83,9 +83,9 @@
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #edce8e; box-shadow: 0 0 0 4px #edce8e12; }
 .hero-copy h1 { font-size: clamp(39px, 4.7vw, 65px); line-height: 1.14; color: #fff; letter-spacing: -.055em; margin: 0 0 23px; font-weight: 750; }
 .hero-copy h1 span { color: var(--brass-light); }
-.hero-copy > p { color: #b7c2d1; max-width: 450px; font-size: 14px; line-height: 1.9; margin: 0; }
+.hero-copy > p { color: #dce4ee; max-width: 450px; font-size: 14px; line-height: 1.9; margin: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
-.hero-values { display: flex; gap: 0; margin-top: 35px; color: #b9c3d0; font-size: 10px; }
+.hero-values { display: flex; gap: 0; margin-top: 35px; color: #dce4ee; font-size: 10px; }
 .hero-values span { display: flex; gap: 8px; align-items: center; padding: 0 21px; border-left: 1px solid #ffffff1c; }
 .hero-values span:first-child { padding-left: 0; border-left: 0; }
 .hero-values i { font-size: 14px; color: var(--brass-light); }
@@ -100,9 +100,9 @@
 .seal-star { position: absolute; color: var(--brass); background: #17283c; font-size: 20px; line-height: 1; }
 .star-one { left: 41px; top: 70px; }
 .star-two { right: 42px; bottom: 70px; }
-.identity-location { display: flex; align-items: center; justify-content: center; gap: 7px; color: #a2b1c3; font-size: 7px; letter-spacing: .14em; margin-top: 17px; }
+.identity-location { display: flex; align-items: center; justify-content: center; gap: 7px; color: #dce4ee; font-size: 7px; letter-spacing: .14em; margin-top: 17px; }
 .identity-location span { width: 4px; height: 4px; background: var(--brass); border-radius: 50%; }
-.hero-bottom-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 47px; padding-top: 20px; border-top: 1px solid #ffffff12; font-size: 9px; letter-spacing: .015em; color: #9aa9bb; }
+.hero-bottom-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 47px; padding-top: 20px; border-top: 1px solid #ffffff26; font-size: 9px; letter-spacing: .015em; color: #d0dbe8; }
 .hero-bottom-line > span { display: flex; gap: 9px; align-items: center; }
 .hero-bottom-line a { display: inline-flex; gap: 15px; align-items: center; color: #c5cfdc; text-decoration: none; }
 .hero-bottom-line a i { color: var(--brass-light); }
@@ -162,12 +162,15 @@
 .news-item-image { width: 114px; height: 90px; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
 .news-list-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 17px; color: var(--ink); font-size: 10px; font-weight: 800; text-decoration: none; }
 
-/* Welcome from the chief. Missing portraits use the site's existing emblem. */
+/* Welcome from the chief. */
 .home-welcome { padding: 75px 0; border-bottom: 1px solid var(--line); }
 .welcome-layout { display: grid; grid-template-columns: .85fr 1.25fr; align-items: center; gap: 90px; max-width: 1000px; margin: 0 auto; }
 .welcome-portrait { position: relative; width: 100%; background: #edf0f4; border-radius: 12px; aspect-ratio: 1 / 1.04; overflow: hidden; }
 .portrait-decoration { position: absolute; width: 300px; height: 300px; left: 50%; top: 12%; transform: translateX(-50%); border: 1px solid #bac4d345; border-radius: 50%; box-shadow: 0 0 0 30px #bcc7d21c, 0 0 0 60px #bcc7d20d; }
 .welcome-portrait > img { position: relative; width: 100%; height: 100%; object-fit: cover; }
+.portrait-photo { position: absolute; inset: 0; overflow: hidden; background: #fff; }
+.portrait-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.portrait-photo img.kapolres-photo-original { position: absolute; width: 190%; max-width: none; height: auto; left: -45%; top: -40%; }
 .portrait-emblem { position: absolute; inset: 0 0 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; }
 .portrait-emblem img { width: 145px; height: 145px; object-fit: contain; filter: drop-shadow(0 12px 12px #101e3114); }
 .portrait-emblem > span { color: #6d7b8c; font-size: 7px; font-weight: 800; letter-spacing: .2em; }
@@ -442,7 +445,7 @@
     .news-item-image { width: 110px; height: 85px; }
     .home-feature-news > p { font-size: 12px; }
     .welcome-layout { grid-template-columns: 1fr; gap: 32px; }
-    .welcome-portrait { width: 100%; max-width: 360px; min-height: 0; aspect-ratio: 1.15; margin: 0 auto; }
+    .welcome-portrait { width: 100%; max-width: 360px; min-height: 0; aspect-ratio: 1 / 1.1; margin: 0 auto; }
     .portrait-emblem img { width: 130px; height: 130px; }
     .welcome-copy h2 { font-size: 29px; }
     .welcome-copy blockquote p { font-size: 12px; }

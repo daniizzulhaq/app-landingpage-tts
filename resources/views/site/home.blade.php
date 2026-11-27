@@ -1,6 +1,7 @@
 @extends('layouts.public')
 
 @push('meta')
+    <link rel="preload" href="{{ asset('img/polres-tts-background.jpg') }}" as="image">
     <script type="application/ld+json">{!! json_encode([
         '@context' => 'https://schema.org',
         '@type' => 'GovernmentOrganization',
@@ -126,11 +127,7 @@
         <div class="container"><div class="welcome-layout">
             <div class="welcome-portrait">
                 <div class="portrait-decoration" aria-hidden="true"></div>
-                @if ($kapolres?->foto)
-                    <img src="{{ media_url($kapolres->foto, 'img/avatar.svg') }}" alt="{{ $kapolres->namaLengkap() }}" loading="lazy" decoding="async">
-                @else
-                    <div class="portrait-emblem"><img src="{{ site_logo_url() }}" width="170" height="170" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" loading="lazy"><span>MENGABDI UNTUK NEGERI</span></div>
-                @endif
+                <div class="portrait-photo"><img src="{{ $kapolres->fotoUrl() }}" @class(['kapolres-photo-original' => $kapolres->fotoUrl() === asset(config('kapolres.foto'))]) alt="{{ $kapolres->namaLengkap() }}" width="1280" height="1280" loading="lazy" decoding="async"></div>
                 <div class="portrait-name"><strong>{{ $kapolres?->namaLengkap() ?? 'Kapolres Timor Tengah Selatan' }}</strong><span>{{ $kapolres?->jabatan ?? 'Kepolisian Resor Timor Tengah Selatan' }}</span></div>
             </div>
             <div class="welcome-copy"><span class="eyebrow">SAMBUTAN KAPOLRES</span><h2 id="welcome-title">Mengabdi dengan hati.<br>Membangun kepercayaan.</h2>

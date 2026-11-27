@@ -84,6 +84,9 @@
 .section-index { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 37px; height: 37px; background: #f6f1e5; color: #95722e; border-radius: 9px; font-size: 12px; font-weight: 800; }
 .public-inner .leader-card { border-radius: 12px; box-shadow: 0 6px 24px #101e3106; }
 .public-inner .leader-card > img { aspect-ratio: 1.1; background: radial-gradient(circle at 50% 40%, #f8fafc, #e4eaf1); object-position: center 20%; }
+.leader-photo { position: relative; aspect-ratio: 1.1; overflow: hidden; background: #fff; }
+.leader-photo > img { height: 100%; object-position: center top; }
+.leader-photo > img.kapolres-photo-original { position: absolute; width: 190%; max-width: none; height: auto; aspect-ratio: auto; left: -45%; top: -40%; }
 .public-inner .leader-card .info { padding: 23px; background: #fff; border-top-width: 2px; }
 .public-inner .leader-card .jabatan { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
 .public-inner .leader-card .nama { font-size: 20px; font-weight: 800; letter-spacing: -.025em; margin-bottom: 7px; }

@@ -82,6 +82,8 @@ File `.env`, dependensi PHP di `/vendor`, serta foto/dokumen unggahan di `storag
 
 Logo bawaan Polda NTT menggunakan `public/img/logo-polda-ntt.png` yang ikut Git. Pengaturan logo demo lama (`settings/logo-polres-tts.png`) otomatis menggunakan aset ini, sehingga tidak perlu menyalin ulang logo ke storage setelah pull. URL logo menyertakan versi isi file untuk memperbarui cache browser. Logo yang diunggah sendiri lewat Admin tetap digunakan. Setelah memperbarui kode di hosting, jalankan `php artisan optimize:clear` untuk membersihkan cache tampilan dan pengaturan.
 
+Nama, pangkat, foto, dan sambutan bawaan Kapolres mengikuti referensi POLIRAN di `config/kapolres.php` dan `public/img/kapolres-tts.jpg`. Data kosong atau contoh demo otomatis memakai referensi tersebut pada beranda, Profil Pimpinan, dan Struktur Organisasi. Foto ikut Git sehingga tidak bergantung pada folder unggahan hosting. Profil dan sambutan resmi yang sudah diisi admin tetap dipakai.
+
 ### a. Siapkan file
 Di komputer lokal (folder proyek):
 

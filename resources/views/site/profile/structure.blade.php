@@ -9,7 +9,7 @@
             {{-- Pimpinan --}}
             <div class="org-top mb-4">
                 <div class="org-node lead">
-                    <img src="{{ thumb_url($kapolres?->foto, 'img/avatar.svg') }}" alt="" loading="lazy">
+                    <img src="{{ $kapolres->fotoUrl() }}" alt="{{ $kapolres->namaLengkap() }}" loading="lazy">
                     <div class="role">{{ $kapolres?->jabatan ?? 'Kapolres' }}</div>
                     <div class="who">{{ $kapolres?->namaLengkap() ?? '(diisi admin)' }}</div>
                 </div>

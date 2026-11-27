@@ -20,4 +20,25 @@ class Page extends Model
     {
         return static::where('key', $key)->first();
     }
+
+    public static function sambutanKapolresForDisplay(): self
+    {
+        return (static::byKey('sambutan_kapolres')
+            ?? new static(['key' => 'sambutan_kapolres']))->forDisplay();
+    }
+
+    public function forDisplay(): self
+    {
+        $page = clone $this;
+
+        if ($page->key === 'sambutan_kapolres' && (
+            ! trim((string) $page->isi)
+            || str_contains($page->isi, '(diisi admin)')
+            || str_contains($page->isi, 'teks ini adalah contoh untuk demo')
+        )) {
+            $page->fill(['judul' => 'Sambutan Kapolres', 'isi' => config('kapolres.sambutan')]);
+        }
+
+        return $page;
+    }
 }

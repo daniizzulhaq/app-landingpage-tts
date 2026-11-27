@@ -25,9 +25,9 @@ class ProfileController extends Controller
     public function leaders()
     {
         return view('site.profile.leaders', [
-            'kapolres' => Official::where('level', 'kapolres')->orderBy('urutan')->first(),
+            'kapolres' => Official::kapolresForDisplay(),
             'wakapolres' => Official::where('level', 'wakapolres')->orderBy('urutan')->first(),
-            'sambutan' => Page::byKey('sambutan_kapolres'),
+            'sambutan' => Page::sambutanKapolresForDisplay(),
             'pejabat' => Official::with('unit')->where('level', 'pejabat')
                 ->whereHas('unit', fn ($q) => $q->where('type', '!=', 'polsek'))
                 ->get()->sortBy(fn ($o) => [array_search($o->unit->type, array_keys(Unit::TYPES)), $o->unit->urutan, $o->urutan])->values(),
@@ -40,7 +40,7 @@ class ProfileController extends Controller
         $units = Unit::with(['officials' => fn ($q) => $q->where('level', 'pejabat')])->ordered()->get()->groupBy('type');
 
         return view('site.profile.structure', [
-            'kapolres' => Official::where('level', 'kapolres')->orderBy('urutan')->first(),
+            'kapolres' => Official::kapolresForDisplay(),
             'wakapolres' => Official::where('level', 'wakapolres')->orderBy('urutan')->first(),
             'groups' => collect(Unit::TYPES)->map(fn ($label, $type) => ['label' => $label, 'units' => $units[$type] ?? collect()]),
             'bagan' => setting('bagan_struktur'),
