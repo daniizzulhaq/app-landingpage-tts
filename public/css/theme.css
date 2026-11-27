@@ -74,7 +74,7 @@
 .heading-dot { color: var(--brass); }
 
 /* The headquarters photo sits behind the homepage identity. */
-.home-hero { position: relative; overflow: hidden; color: #fff; background: #101e31 url('../img/polres-tts-background.jpg') center 65% / cover no-repeat; padding: 70px 0 80px; }
+.home-hero { position: relative; overflow: hidden; min-height: 66.6667vw; color: #fff; background: #4087e1 url('../img/polres-tts-background.jpg') center bottom / 100% auto no-repeat; padding: 70px 0 80px; }
 .home-hero::before { position: absolute; content: ''; inset: 0; background: linear-gradient(90deg, #101e31b3, #101e3180), linear-gradient(0deg, #101e3166, transparent 60%); pointer-events: none; }
 .hero-grid-lines { position: absolute; inset: 0; background-image: linear-gradient(#ffffff03 1px, transparent 1px), linear-gradient(90deg, #ffffff03 1px, transparent 1px); background-size: 76px 76px; mask-image: linear-gradient(90deg, transparent, #000); pointer-events: none; }
 .home-hero .container { position: relative; }
@@ -110,6 +110,7 @@
 /* Service access stays visible directly below the hero. */
 .home-services { background: var(--paper); scroll-margin-top: 110px; }
 .service-hub { position: relative; margin-top: -44px; border: 1px solid #e5e8ed; background: #fff; border-radius: 14px; box-shadow: 0 14px 34px #101e3106; }
+.home-services .service-hub { margin-top: 0; }
 .hub-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 32px 23px; }
 .hub-heading .eyebrow { font-size: 8px; }
 .hub-heading h2 { font-size: 22px; margin: 5px 0 0; }
