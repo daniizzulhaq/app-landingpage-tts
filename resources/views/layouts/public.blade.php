@@ -66,7 +66,7 @@
     <link href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}?v=5" rel="stylesheet">
-    <link href="{{ asset('css/theme.css') }}?v=5" rel="stylesheet">
+    <link href="{{ asset('css/theme.css') }}?v=6" rel="stylesheet">
     @unless ($isHome)
         <link href="{{ asset('css/pages.css') }}?v=3" rel="stylesheet">
     @endunless
