@@ -66,7 +66,7 @@
     <link href="{{ asset('vendor/bootstrap/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}?v=5" rel="stylesheet">
-    <link href="{{ asset('css/theme.css') }}?v=8" rel="stylesheet">
+    <link href="{{ asset('css/theme.css') }}?v=11" rel="stylesheet">
     @unless ($isHome)
         <link href="{{ asset('css/pages.css') }}?v=3" rel="stylesheet">
     @endunless
@@ -152,6 +152,7 @@
                     </div>
                 </div>
                 <p class="small mb-3">{{ setting('site_motto', 'Diberkati untuk memberkati') }}</p>
+                <div class="footer-community-mark mb-3"><img src="{{ asset('img/logo-polisi-bersama-masyarakat.jpg') }}" alt="Polisi Bersama Masyarakat — Melindungi, Mengayomi dan Melayani" width="781" height="442" loading="lazy" decoding="async"></div>
                 @if (setting('alamat'))<p class="small mb-2"><i class="bi bi-geo-alt me-2"></i>{{ setting('alamat') }}</p>@endif
                 @if (setting('jam_pelayanan'))<p class="small mb-0" style="white-space:pre-line"><i class="bi bi-clock me-2"></i>{{ setting('jam_pelayanan') }}</p>@endif
             </div>

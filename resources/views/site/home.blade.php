@@ -47,7 +47,6 @@
                         <img class="hero-crest" src="{{ site_logo_url() }}" width="220" height="220" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" fetchpriority="high">
                         <span class="seal-star star-one" aria-hidden="true">✦</span>
                         <span class="seal-star star-two" aria-hidden="true">✦</span>
-                        <span class="seal-caption">PRESISI</span>
                     </div>
                     <div class="identity-location"><span></span> TIMOR TENGAH SELATAN, NUSA TENGGARA TIMUR</div>
                 </div>
@@ -85,6 +84,15 @@
                     </a>
                 </div>
                 <div class="hub-help-line"><span><i class="bi bi-info-circle" aria-hidden="true"></i> Masih punya pertanyaan seputar pelayanan?</span><a href="{{ route('site.faq') }}">Baca pertanyaan umum <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-community" aria-label="Polisi bersama masyarakat">
+        <div class="container">
+            <div class="community-banner">
+                <div><span class="eyebrow">POLRES TIMOR TENGAH SELATAN</span><h2>Polisi bersama masyarakat</h2><p>Melindungi, mengayomi, dan melayani.</p></div>
+                <img src="{{ asset('img/logo-polisi-bersama-masyarakat.jpg') }}" alt="Polisi Bersama Masyarakat — Melindungi, Mengayomi dan Melayani" width="781" height="442" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -128,7 +136,6 @@
             <div class="welcome-portrait">
                 <div class="portrait-decoration" aria-hidden="true"></div>
                 <div class="portrait-photo"><img src="{{ $kapolres->fotoUrl() }}" @class(['kapolres-photo-original' => $kapolres->fotoUrl() === asset(config('kapolres.foto'))]) alt="{{ $kapolres->namaLengkap() }}" width="1280" height="1280" loading="lazy" decoding="async"></div>
-                <div class="portrait-name"><strong>{{ $kapolres?->namaLengkap() ?? 'Kapolres Timor Tengah Selatan' }}</strong><span>{{ $kapolres?->jabatan ?? 'Kepolisian Resor Timor Tengah Selatan' }}</span></div>
             </div>
             <div class="welcome-copy"><span class="eyebrow">SAMBUTAN KAPOLRES</span><h2 id="welcome-title">Mengabdi dengan hati.<br>Membangun kepercayaan.</h2>
                 @php
@@ -136,6 +143,7 @@
                     $plain = trim(Str::after($plain, 'perlu diganti dengan data resmi.')) ?: $plain;
                 @endphp
                 <blockquote><span class="quote-mark" aria-hidden="true">“</span><p>{{ Str::limit($plain, 330) ?: 'Kami berkomitmen untuk terus hadir memberikan perlindungan, pengayoman, dan pelayanan terbaik bagi seluruh masyarakat Timor Tengah Selatan.' }}</p></blockquote>
+                <p class="welcome-signature"><strong>{{ $kapolres->namaLengkap() }}</strong><span>{{ $kapolres->jabatan }}</span></p>
                 <a href="{{ route('site.leaders') }}" class="home-button button-navy">Baca sambutan lengkap <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
             </div>
         </div></div>

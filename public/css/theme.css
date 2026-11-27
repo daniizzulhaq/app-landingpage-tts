@@ -130,6 +130,13 @@
 .hub-help-line { background: #fafbfc; border-top: 1px solid var(--line); border-radius: 0 0 14px 14px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 32px; font-size: 10px; color: var(--muted); }
 .hub-help-line span { display: flex; gap: 8px; align-items: center; }
 .hub-help-line a { display: inline-flex; gap: 14px; color: var(--ink); font-weight: 700; text-decoration: none; }
+.home-community { background: var(--paper); padding-top: 28px; }
+.community-banner { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 18px 30px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.community-banner h2 { font-size: clamp(21px, 2.4vw, 28px); margin: 10px 0; }
+.community-banner p { color: var(--muted); font-size: 12px; margin: 0; }
+.community-banner > img { display: block; width: 300px; max-width: 100%; height: auto; }
+.footer-community-mark { width: 240px; max-width: 100%; padding: 4px; border-radius: 8px; overflow: hidden; background: #fff; }
+.footer-community-mark img { display: block; width: 100%; height: auto; }
 .home-announcement { background: var(--paper); padding-top: 22px; }
 .announcement-box { display: flex; gap: 20px; align-items: center; padding: 17px 20px; background: #edf0f4; border: 1px solid #e6e9ee; border-radius: 8px; }
 .announcement-label { font-size: 10px; font-weight: 800; display: inline-flex; gap: 9px; align-items: center; flex-shrink: 0; padding-right: 18px; border-right: 1px solid #d6dce4; }
@@ -171,13 +178,13 @@
 .welcome-portrait > img { position: relative; width: 100%; height: 100%; object-fit: cover; }
 .portrait-photo { position: absolute; inset: 0; overflow: hidden; background: #fff; }
 .portrait-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.portrait-photo img.kapolres-photo-original { position: absolute; width: 190%; max-width: none; height: auto; left: -45%; top: -40%; }
+.portrait-photo img.kapolres-photo-original { position: absolute; width: 190%; max-width: none; height: auto; left: -45%; top: -46%; }
 .portrait-emblem { position: absolute; inset: 0 0 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; }
 .portrait-emblem img { width: 145px; height: 145px; object-fit: contain; filter: drop-shadow(0 12px 12px #101e3114); }
 .portrait-emblem > span { color: #6d7b8c; font-size: 7px; font-weight: 800; letter-spacing: .2em; }
-.portrait-name { position: absolute; bottom: 0; inset-inline: 0; background: #101e31f5; padding: 19px 24px; text-align: center; border-top: 2px solid var(--brass); }
-.portrait-name strong { display: block; color: #fff; font-size: 12px; line-height: 1.6; }
-.portrait-name > span { display: block; font-size: 9px; color: #c9d0da; margin-top: 3px; }
+.welcome-signature { margin: 0 0 24px; }
+.welcome-signature strong { display: block; color: var(--ink); font-size: 13px; line-height: 1.7; }
+.welcome-signature > span { display: block; font-size: 11px; color: var(--muted); margin-top: 4px; }
 .welcome-copy h2 { font-size: clamp(26px, 2.7vw, 34px); line-height: 1.35; margin-top: 14px; }
 .welcome-copy blockquote { position: relative; margin: 23px 0 25px; border-left: 2px solid var(--brass); padding: 0 0 0 20px; }
 .welcome-copy blockquote p { color: var(--muted); font-size: 13px; line-height: 2; margin: 0; }
@@ -398,6 +405,8 @@
     .home-contact .col-lg-7:has(> .btn) .map-frame { height: auto; }
 }
 @media (max-width: 767.98px) {
+    .community-banner { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; }
+    .community-banner > img { align-self: center; }
     .public-site .container { padding-inline: 22px; }
     .home-hero { padding-top: 30px; background-position: center bottom; }
     .home-hero-grid { grid-template-columns: 1fr; gap: 25px; }
