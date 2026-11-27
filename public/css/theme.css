@@ -74,8 +74,8 @@
 .heading-dot { color: var(--brass); }
 
 /* The headquarters photo sits behind the homepage identity. */
-.home-hero { position: relative; overflow: hidden; color: #fff; background: #101e31 url('../img/polres-tts-background.jpg') center 65% / cover no-repeat; padding: 70px 0 80px; }
-.home-hero::before { position: absolute; content: ''; inset: 0; background: linear-gradient(90deg, #101e31eb 0%, #101e31c7 46%, #101e3180 100%), linear-gradient(0deg, #101e31a6, transparent 60%); pointer-events: none; }
+.home-hero { position: relative; overflow: hidden; color: #fff; background: #101e31 url('../img/polres-tts-background.jpg') right center / contain no-repeat; padding: 70px 0 80px; }
+.home-hero::before { position: absolute; content: ''; inset: 0; background: linear-gradient(90deg, #101e31 32%, #101e31db 50%, #101e3180 100%), linear-gradient(0deg, #101e31a6, transparent 60%); pointer-events: none; }
 .hero-grid-lines { position: absolute; inset: 0; background-image: linear-gradient(#ffffff03 1px, transparent 1px), linear-gradient(90deg, #ffffff03 1px, transparent 1px); background-size: 76px 76px; mask-image: linear-gradient(90deg, transparent, #000); pointer-events: none; }
 .home-hero .container { position: relative; }
 .home-hero-grid { display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: 50px; }
@@ -398,7 +398,8 @@
 }
 @media (max-width: 767.98px) {
     .public-site .container { padding-inline: 22px; }
-    .home-hero { padding-top: 41px; }
+    .home-hero { padding-top: 41px; background-position: center bottom 44px; }
+    .home-hero::before { background: linear-gradient(180deg, #101e31 60%, #101e3180 82%, #101e31b3 100%); }
     .home-hero-grid { grid-template-columns: 1fr; gap: 25px; }
     .hero-copy h1 { font-size: clamp(39px, 7.5vw, 54px); }
     .hero-copy > p { max-width: 460px; font-size: 13px; }
