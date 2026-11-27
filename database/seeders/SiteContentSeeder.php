@@ -17,6 +17,7 @@ class SiteContentSeeder extends Seeder
         $settings = [
             'site_name' => 'Polres TTS',
             'site_tagline' => 'Kepolisian Resor Timor Tengah Selatan',
+            'site_motto' => 'Diberkati untuk memberkati',
             'meta_description' => 'Situs resmi Kepolisian Resor Timor Tengah Selatan: informasi layanan, berita, kegiatan, dan informasi publik.',
             'alamat' => 'Alamat kantor '.self::P,
             'telepon' => null,

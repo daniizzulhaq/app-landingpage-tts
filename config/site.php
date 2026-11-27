@@ -13,6 +13,7 @@ return [
         'Identitas' => [
             'site_name' => ['label' => 'Nama situs', 'type' => 'text', 'rules' => 'required|string|max:100'],
             'site_tagline' => ['label' => 'Tagline', 'type' => 'text', 'rules' => 'nullable|string|max:150'],
+            'site_motto' => ['label' => 'Motto', 'type' => 'text', 'rules' => 'nullable|string|max:150'],
             'meta_description' => ['label' => 'Deskripsi situs (SEO)', 'type' => 'textarea', 'rules' => 'nullable|string|max:300'],
             'logo' => ['label' => 'Logo', 'type' => 'image'],
             'og_image' => ['label' => 'Gambar bagikan default (Open Graph)', 'type' => 'image'],

@@ -61,6 +61,25 @@ php artisan test
 
 ## 2. Deploy ke cPanel
 
+### Melalui GitHub
+
+Proyek ini memakai CSS/JS statis di `public/`, sehingga **tidak perlu `npm install` atau `npm run build`**. `.gitignore` mengizinkan aset `public/css`, `public/js`, `public/fonts`, `public/img`, dan `public/vendor` ikut ke GitHub; `public/build` juga diizinkan jika nantinya digunakan.
+
+Jika folder proyek belum menjadi repository Git, jalankan:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/USERNAME/NAMA-REPOSITORY.git
+git push -u origin main
+```
+
+Setelah clone/pull repository ke hosting, jalankan `composer install --no-dev --optimize-autoloader`, buat `.env` dari `.env.example`, lalu ikuti pengaturan document root, database, dan perintah artisan di bawah. Hosting harus mendukung PHP 8.2+ dan database MySQL/MariaDB; GitHub Pages tidak menjalankan aplikasi Laravel ini.
+
+File `.env`, dependensi PHP di `/vendor`, serta foto/dokumen unggahan di `storage/app/public` tidak ikut GitHub. Untuk memindahkan situs yang sudah berisi konten, pindahkan juga database dan isi `storage/app/public` secara terpisah, lalu buat ulang tautan `public/storage` di hosting. Jangan timpa `APP_KEY` yang sudah digunakan saat memperbarui situs.
+
 ### a. Siapkan file
 Di komputer lokal (folder proyek):
 

@@ -4,8 +4,8 @@
     $pageTitle = trim($__env->yieldContent('title'));
     $fullTitle = $pageTitle ? $pageTitle.' | '.$siteName : $siteName.' — '.$tagline;
     $metaDesc = Str::limit(trim($__env->yieldContent('description')) ?: setting('meta_description', $tagline), 160);
-    $ogImage = trim($__env->yieldContent('og_image')) ?: (setting('og_image') ? media_url(setting('og_image')) : asset('img/logo-placeholder.svg'));
-    $logo = media_url(setting('logo'), 'img/logo-placeholder.svg');
+    $ogImage = trim($__env->yieldContent('og_image')) ?: (setting('og_image') ? media_url(setting('og_image')) : asset('img/logo-polda-ntt.png'));
+    $logo = media_url(setting('logo'), 'img/logo-polda-ntt.png');
     $nav = [
         ['Beranda', route('home'), 'home', []],
         ['Profil', null, 'site.profile*|site.leaders|site.structure|site.units.*|site.polsek', [
@@ -151,6 +151,7 @@
                         <div class="small" style="color:var(--brass-light)">{{ $tagline }}</div>
                     </div>
                 </div>
+                <p class="small mb-3">{{ setting('site_motto', 'Diberkati untuk memberkati') }}</p>
                 @if (setting('alamat'))<p class="small mb-2"><i class="bi bi-geo-alt me-2"></i>{{ setting('alamat') }}</p>@endif
                 @if (setting('jam_pelayanan'))<p class="small mb-0" style="white-space:pre-line"><i class="bi bi-clock me-2"></i>{{ setting('jam_pelayanan') }}</p>@endif
             </div>
