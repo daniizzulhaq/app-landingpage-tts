@@ -80,6 +80,8 @@ Setelah clone/pull repository ke hosting, jalankan `composer install --no-dev --
 
 File `.env`, dependensi PHP di `/vendor`, serta foto/dokumen unggahan di `storage/app/public` tidak ikut GitHub. Untuk memindahkan situs yang sudah berisi konten, pindahkan juga database dan isi `storage/app/public` secara terpisah, lalu buat ulang tautan `public/storage` di hosting. Jangan timpa `APP_KEY` yang sudah digunakan saat memperbarui situs.
 
+Logo bawaan Polda NTT menggunakan `public/img/logo-polda-ntt.png` yang ikut Git. Pengaturan logo demo lama (`settings/logo-polres-tts.png`) otomatis menggunakan aset ini, sehingga tidak perlu menyalin ulang logo ke storage setelah pull. URL logo menyertakan versi isi file untuk memperbarui cache browser. Logo yang diunggah sendiri lewat Admin tetap digunakan. Setelah memperbarui kode di hosting, jalankan `php artisan optimize:clear` untuk membersihkan cache tampilan dan pengaturan.
+
 ### a. Siapkan file
 Di komputer lokal (folder proyek):
 

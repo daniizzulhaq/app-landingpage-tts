@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="noindex, nofollow">
     <title>@yield('title', 'Dashboard') · Admin {{ setting('site_name', 'Polres TTS') }}</title>
-    <link rel="icon" href="{{ media_url(setting('logo'), 'img/logo-polda-ntt.png') }}">
+    <link rel="icon" href="{{ site_logo_url() }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     @stack('styles')
@@ -59,7 +59,7 @@
 
 <nav id="sidebar" class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" aria-label="Menu admin">
     <div class="sidebar-brand">
-        <img src="{{ media_url(setting('logo'), 'img/logo-polda-ntt.png') }}" alt="" width="36" height="36">
+        <img src="{{ site_logo_url() }}" alt="" width="36" height="36">
         <div class="lh-sm">
             <div class="fw-semibold">{{ setting('site_name', 'Polres TTS') }}</div>
             <small class="text-white-50">Panel Admin</small>

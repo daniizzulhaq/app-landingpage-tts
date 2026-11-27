@@ -14,7 +14,7 @@
     <div class="card auth-card shadow">
         <div class="card-body p-4 p-md-5">
             <div class="text-center mb-4">
-                <img src="{{ media_url(setting('logo'), 'img/logo-polda-ntt.png') }}" alt="Logo" width="64" height="64" class="mb-2" style="object-fit:contain">
+                <img src="{{ site_logo_url() }}" alt="Logo" width="64" height="64" class="mb-2" style="object-fit:contain">
                 <h1 class="h5 mb-0">{{ setting('site_name', 'Polres TTS') }}</h1>
                 <div class="text-muted small">Panel Administrasi</div>
             </div>

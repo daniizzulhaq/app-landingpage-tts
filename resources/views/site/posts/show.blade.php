@@ -21,7 +21,7 @@
         'dateModified' => $post->updated_at->toIso8601String(),
         'author' => ['@type' => 'Organization', 'name' => $post->unit?->name ?? setting('site_name', 'Polres TTS')],
         'publisher' => ['@type' => 'Organization', 'name' => setting('site_name', 'Polres TTS'),
-            'logo' => ['@type' => 'ImageObject', 'url' => media_url(setting('logo'), 'img/logo-polda-ntt.png')]],
+            'logo' => ['@type' => 'ImageObject', 'url' => site_logo_url()]],
         'mainEntityOfPage' => url()->current(),
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
 @endpush

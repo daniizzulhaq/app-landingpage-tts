@@ -26,6 +26,24 @@ if (! function_exists('media_url')) {
     }
 }
 
+if (! function_exists('site_logo_url')) {
+    /** Logo bawaan mengikuti Git; logo unggahan admin tetap didukung. */
+    function site_logo_url(): string
+    {
+        $path = setting('logo');
+        $bundledLogos = ['settings/logo-polres-tts.png', 'settings/logo-polda-ntt.png'];
+
+        if ($path && ! in_array($path, $bundledLogos, true) && Storage::disk('public')->exists($path)) {
+            return media_url($path);
+        }
+
+        $asset = 'img/logo-polda-ntt.png';
+        $version = substr(hash_file('sha256', public_path($asset)), 0, 12);
+
+        return asset($asset).'?v='.$version;
+    }
+}
+
 if (! function_exists('thumb_url')) {
     /** URL thumbnail 600px (dibuat ImageService), fallback ke gambar utama. */
     function thumb_url(?string $path, string $placeholder = 'img/placeholder.svg'): string

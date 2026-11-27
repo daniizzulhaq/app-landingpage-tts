@@ -7,7 +7,7 @@
         'name' => setting('site_tagline', 'Kepolisian Resor Timor Tengah Selatan'),
         'alternateName' => setting('site_name', 'Polres TTS'),
         'url' => route('home'),
-        'logo' => media_url(setting('logo'), 'img/logo-polda-ntt.png'),
+        'logo' => site_logo_url(),
         'telephone' => setting('telepon'),
         'email' => setting('email'),
         'address' => setting('alamat'),
@@ -43,7 +43,7 @@
                             <defs><path id="seal-text-circle" d="M180,180 m-153,0 a153,153 0 1,1 306,0 a153,153 0 1,1 -306,0" /></defs>
                             <text><textPath href="#seal-text-circle" startOffset="0%" textLength="960">MELINDUNGI · MENGAYOMI · MELAYANI · </textPath></text>
                         </svg>
-                        <img class="hero-crest" src="{{ media_url(setting('logo'), 'img/logo-polda-ntt.png') }}" width="220" height="220" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" fetchpriority="high">
+                        <img class="hero-crest" src="{{ site_logo_url() }}" width="220" height="220" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" fetchpriority="high">
                         <span class="seal-star star-one" aria-hidden="true">✦</span>
                         <span class="seal-star star-two" aria-hidden="true">✦</span>
                         <span class="seal-caption">PRESISI</span>
@@ -129,7 +129,7 @@
                 @if ($kapolres?->foto)
                     <img src="{{ media_url($kapolres->foto, 'img/avatar.svg') }}" alt="{{ $kapolres->namaLengkap() }}" loading="lazy" decoding="async">
                 @else
-                    <div class="portrait-emblem"><img src="{{ media_url(setting('logo'), 'img/logo-polda-ntt.png') }}" width="170" height="170" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" loading="lazy"><span>MENGABDI UNTUK NEGERI</span></div>
+                    <div class="portrait-emblem"><img src="{{ site_logo_url() }}" width="170" height="170" alt="Lambang {{ setting('site_name', 'Polres TTS') }}" loading="lazy"><span>MENGABDI UNTUK NEGERI</span></div>
                 @endif
                 <div class="portrait-name"><strong>{{ $kapolres?->namaLengkap() ?? 'Kapolres Timor Tengah Selatan' }}</strong><span>{{ $kapolres?->jabatan ?? 'Kepolisian Resor Timor Tengah Selatan' }}</span></div>
             </div>

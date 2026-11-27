@@ -4,8 +4,8 @@
     $pageTitle = trim($__env->yieldContent('title'));
     $fullTitle = $pageTitle ? $pageTitle.' | '.$siteName : $siteName.' — '.$tagline;
     $metaDesc = Str::limit(trim($__env->yieldContent('description')) ?: setting('meta_description', $tagline), 160);
-    $ogImage = trim($__env->yieldContent('og_image')) ?: (setting('og_image') ? media_url(setting('og_image')) : asset('img/logo-polda-ntt.png'));
-    $logo = media_url(setting('logo'), 'img/logo-polda-ntt.png');
+    $ogImage = trim($__env->yieldContent('og_image')) ?: (setting('og_image') ? media_url(setting('og_image')) : site_logo_url());
+    $logo = site_logo_url();
     $nav = [
         ['Beranda', route('home'), 'home', []],
         ['Profil', null, 'site.profile*|site.leaders|site.structure|site.units.*|site.polsek', [
